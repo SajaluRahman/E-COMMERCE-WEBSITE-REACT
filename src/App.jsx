@@ -20,7 +20,6 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<ProductDetails />} />
             
-            {/* Protected route example */}
             <Route 
               path="/checkout"
               element={

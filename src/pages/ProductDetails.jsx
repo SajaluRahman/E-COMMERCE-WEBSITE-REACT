@@ -75,9 +75,8 @@ const ProductDetails = () => {
     );
   }
 
-  // Determine stock status with fallback
-  const isInStock = product.inStock !== false; // Default to true if undefined
-  const stockCount = product.stock ?? Infinity; // Default to Infinity if undefined
+  const isInStock = product.inStock !== false; 
+  const stockCount = product.stock ?? Infinity; 
 
   return (
     <motion.div
@@ -109,10 +108,8 @@ const ProductDetails = () => {
           </ol>
         </nav>
 
-        {/* Product Details */}
         <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
           <div className="flex flex-col md:flex-row gap-8">
-            {/* Image */}
             <div className="w-full md:w-1/2">
               <div className="relative overflow-hidden rounded-md">
                 <img
@@ -124,11 +121,9 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            {/* Details */}
             <div className="w-full md:w-1/2 space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{product.title}</h2>
 
-              {/* Rating */}
               {product.rating && (
                 <div className="flex items-center space-x-1">
                   {[...Array(5)].map((_, i) => (
@@ -147,10 +142,8 @@ const ProductDetails = () => {
                 </div>
               )}
 
-              {/* Price */}
               <p className="text-2xl text-teal-400 font-bold">₹ {product.price.toFixed(2)}</p>
 
-              {/* Stock Status */}
               <p className={`text-sm font-medium ${isInStock ? 'text-gray-600' : 'text-red-500'}`}>
                 {isInStock
                   ? stockCount === Infinity
@@ -159,10 +152,8 @@ const ProductDetails = () => {
                   : 'Out of Stock'}
               </p>
 
-              {/* Description */}
               <p className="text-base text-gray-600 leading-relaxed">{product.description}</p>
 
-              {/* Quantity Selector */}
               <div className="flex items-center space-x-4">
                 <label htmlFor="quantity" className="text-sm font-medium text-gray-900">
                   Quantity:
@@ -197,7 +188,6 @@ const ProductDetails = () => {
                 </div>
               </div>
 
-              {/* Add to Cart Button */}
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 onClick={handleAddToCart}

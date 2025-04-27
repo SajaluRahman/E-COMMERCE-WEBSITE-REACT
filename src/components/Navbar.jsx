@@ -47,7 +47,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="text-2xl font-bold text-gray-900">MyShop</Link>
 
-          {/* Desktop Nav */}
+          
           <div className="hidden md:flex items-center space-x-6">
             <Link to="/checkout" className="relative text-gray-600 hover:text-primary">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,7 +102,7 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Mobile Menu Icon */}
+          
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
@@ -121,7 +121,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div

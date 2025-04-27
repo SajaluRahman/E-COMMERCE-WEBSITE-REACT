@@ -10,7 +10,6 @@ const Checkout = () => {
 
   const handleCheckout = async () => {
     setIsProcessing(true);
-    // Simulate async checkout (e.g., API call)
     await new Promise((resolve) => setTimeout(resolve, 1000));
     toast.success('Checkout complete! Thank you for your order.', { position: 'top-right' });
     clearCart();
@@ -25,7 +24,6 @@ const Checkout = () => {
       className="min-h-screen bg-gray-100 py-12 mt-16"
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Breadcrumb */}
         <nav className="mb-6 text-sm text-gray-600">
           <ol className="flex space-x-2">
             <li>
@@ -44,7 +42,6 @@ const Checkout = () => {
           </ol>
         </nav>
 
-        {/* Checkout Content */}
         <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Checkout</h2>
 
@@ -61,21 +58,18 @@ const Checkout = () => {
             </div>
           ) : (
             <>
-              {/* Cart Items */}
               <div className="space-y-4 mb-6">
                 {cartItems.map((item) => (
                   <div
                     key={item.id}
                     className="flex items-center border-b border-gray-200 py-4"
                   >
-                    {/* Item Image */}
                     <img
                       src={item.images[0] || 'https://via.placeholder.com/100'}
                       alt={item.title}
                       className="w-20 h-20 object-cover rounded-md mr-4"
                       loading="lazy"
                     />
-                    {/* Item Details */}
                     <div className="flex-1">
                       <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
                       <p className="text-sm text-gray-600">
@@ -107,7 +101,6 @@ const Checkout = () => {
                         </button>
                       </div>
                     </div>
-                    {/* Item Total */}
                     <p className="text-teal-400 font-bold">
                       ₹ {(item.price * item.quantity).toFixed(2)}
                     </p>
@@ -115,13 +108,11 @@ const Checkout = () => {
                 ))}
               </div>
 
-              {/* Total */}
               <div className="flex justify-between items-center border-t border-gray-200 pt-4 mb-6">
                 <span className="text-lg font-semibold text-gray-900">Total</span>
                 <span className="text-2xl font-bold text-teal-400">₹ {getCartTotal()}</span>
               </div>
 
-              {/* Place Order Button */}
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 onClick={handleCheckout}

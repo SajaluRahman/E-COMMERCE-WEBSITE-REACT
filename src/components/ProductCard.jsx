@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
     >
       <Link to={`/product/${product.id}`} className="block relative">
         <img
-          src={product.images[0] || 'https://via.placeholder.com/300'}
+          src={product.images[0] || ''}
           alt={product.title}
           className="w-full h-48 object-cover transform hover:scale-110 transition-transform duration-300"
           loading="lazy"
