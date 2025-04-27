@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Check if user is already logged in (stored in localStorage)
+  
     const savedUser = localStorage.getItem('user');
     if (savedUser) {
       setUser(JSON.parse(savedUser));
@@ -19,13 +19,13 @@ export const AuthProvider = ({ children }) => {
   const signup = (email, password) => {
     const user = { email, password };
     localStorage.setItem('user', JSON.stringify(user));
-    setUser(user); // Update user in context
+    setUser(user);
   };
 
   const login = (email, password) => {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user && user.email === email && user.password === password) {
-      setUser(user); // Set user in context after successful login
+      setUser(user); 
       return true;
     }
     return false;

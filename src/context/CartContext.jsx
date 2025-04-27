@@ -8,19 +8,19 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (product) => {
-    console.log('Adding to cart:', product); // Debug: Log incoming product
+    console.log('Adding to cart:', product); 
     setCartItems((prev) => {
-      // Check if product already exists in cart
+      
       const existingItem = prev.find((item) => item.id === product.id);
       if (existingItem) {
-        // Update quantity if product exists
+       
         return prev.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + (product.quantity || 1) }
             : item
         );
       }
-      // Add new product with quantity
+
       return [...prev, { ...product, quantity: product.quantity || 1 }];
     });
   };
